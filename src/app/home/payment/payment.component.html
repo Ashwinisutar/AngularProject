@@ -1,0 +1,72 @@
+<pre>
+    
+    <mat-toolbar class="md-medium-tall">  ORDERING FOR - {{username}}  </mat-toolbar>
+        
+    
+   
+    <form #f="ngForm">
+    <mat-radio-group aria-label="Payment mode">
+        <mat-radio-button  name="debit" value="1" (click)="setradio('Debit')" [(ngModel)]="debit" #Debit="ngModel">DEBIT</mat-radio-button>
+        <span *ngIf="isSelected('Debit')"><mat-form-field><textarea matInput placeholder="Name on card"></textarea></mat-form-field></span> 
+        <span *ngIf="isSelected('Debit')"><mat-form-field><textarea matInput placeholder="Card number"></textarea></mat-form-field></span> 
+        <span *ngIf="isSelected('Debit')"><mat-form-field><textarea matInput placeholder="Expiry date (MM/YY)"></textarea></mat-form-field></span>        <span *ngIf="isSelected('Debit')"><mat-form-field><textarea matInput placeholder="CVV"></textarea></mat-form-field></span> 
+        <mat-radio-button  name="credit" value="2" (click)="setradio('Credit')" [(ngModel)]="credit" #Credit="ngModel"> CREDIT</mat-radio-button>
+        <span *ngIf="isSelected('Credit')"><mat-form-field><textarea matInput placeholder="Name on card"></textarea></mat-form-field></span> 
+        <span *ngIf="isSelected('Credit')"><mat-form-field><textarea matInput placeholder="Card number"></textarea></mat-form-field></span> 
+        <span *ngIf="isSelected('Credit')"><mat-form-field><textarea matInput placeholder="Expiry date (MM/YY)"></textarea></mat-form-field></span>        <span *ngIf="isSelected('Credit')"><mat-form-field><textarea matInput placeholder="CVV"></textarea></mat-form-field></span> 
+        <mat-radio-button  name="upi" value="3" (click)="setradio('Upi')" [(ngModel)]="upi" #Upi="ngModel"> UPI</mat-radio-button>
+        <span *ngIf="isSelected('Upi')"><mat-form-field><textarea matInput placeholder="Enter your Upi"></textarea></mat-form-field></span> <br/>
+        <mat-radio-button name="cash" value="4" (click)="setradio('Cash')" [(ngModel)]="cash" #Upi="ngModel"> CASH ON DELIVERY </mat-radio-button>
+    </mat-radio-group> 
+</form><br/>
+    <button matTooltip="Refresh" mat-icon-button  (click)="refresh()"><mat-icon>refresh</mat-icon></button> <span id="captch">{{captch}}</span><br/>
+    <div class="formGroup">
+    <input type="text" [(ngModel)]="captchValue"/></div>
+    
+    <button mat-raised-button color="primary" [disabled]="!captchValue" (click)="pay()">pay</button>  
+    <span *ngIf="showError">Invalid captch</span>
+
+<!-- <agm-map 
+[latitude]="latitude" 
+[longitude]="longitude" 
+[zoom]="zoom" >
+  <agm-marker 
+  [latitude]="latitude" 
+  [longitude]="longitude"></agm-marker>
+</agm-map> -->
+
+<div class="container">
+ 
+    <!-- <h1>Angular Google Maps with Places Search Example</h1> -->
+   
+    <div class="form-group">
+      <label>Enter address</label>
+      <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+    </div>
+   
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+      <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+        (dragEnd)="markerDragEnd($event)"></agm-marker>
+    </agm-map>
+   
+    <h5>Address: {{address}}</h5>
+    <div>Latitude: {{latitude}}</div>
+    <div>Longitude: {{longitude}}</div>
+  </div>
+   
+ 
+</pre>
+
+ <!-- <div *ngIf="isSelected('Credit')">  
+            <input type="text"/> Female radio button selected  
+        </div>   
+    
+        <div *ngIf="isSelected('Upi')">  
+            <input type="text"/> Female radio button selected  
+        </div>   
+    
+        <div *ngIf="isSelected('cash')">  
+            <input type="text"/> Female radio button selected  
+        </div>    -->
+  
+        <!-- <button mat-raised-button color="accent"  (click)="refresh()">REFRESH</button>  -->

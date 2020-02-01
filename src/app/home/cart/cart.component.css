@@ -1,0 +1,16 @@
+.example-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width:25%;
+    background-color: darkturquoise;
+    margin:20px;
+    display: inline-block;
+    text-align: center;
+}
+#max{
+    margin-right: 20px;
+}

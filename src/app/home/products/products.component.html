@@ -1,0 +1,21 @@
+
+<div class="example-card"  >
+    <div *ngIf="loading else loaded">
+            <!-- loading ... -->
+            <div class="loading-indicator">
+                    <mat-progress-spinner mode="indeterminate" color="primary"></mat-progress-spinner>
+            </div>
+    </div>
+    <!-- <ng-template > -->
+    <mat-card  class="card" *ngFor="let restaurant of restaurants" (click)="getMenu()">
+        <div>
+        <mat-card-title style="color: red;"> {{restaurant.restaurant.name}}</mat-card-title><br/>
+        <mat-card-content class="card-text"> 
+            <img [src]="restaurant.restaurant.thumb"/>
+            <br/>
+            <p>{{restaurant.restaurant.timings}}</p>
+        </mat-card-content>
+        </div>
+    </mat-card>
+<!-- </ng-template> -->
+</div>

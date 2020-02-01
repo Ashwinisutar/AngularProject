@@ -1,0 +1,83 @@
+<pre>
+<div style="text-align:center">
+
+    <div flex=50>
+    <div class="panel panel-default" [ngStyle]="{'background-image': getUrl()}" fixedInViewport="true">
+    <div class="navbar" id="navbar" >
+    <mat-card class="example-card">
+    <mat-toolbar ><span style="color: red;" id="cards">FOODIESTHAN</span></mat-toolbar>
+    <mat-card-title id="card" style="text-align: center;">LOGIN</mat-card-title>
+    <mat-card-content>
+    <form  name="reg" #form="ngForm">
+        <mat-form-field>
+            <textarea matInput placeholder="Email Id" name="email" [(ngModel)]="user.email" #mail="ngModel" required></textarea>
+        </mat-form-field>
+        <span *ngIf="mail.touched && !mail.value">EmailId is mandatory</span>
+        <mat-form-field >
+            <input matInput type="password" placeholder="Password" name="pass" [(ngModel)]="user.pass" #password="ngModel" required/>
+        </mat-form-field>
+        <span *ngIf="password.touched && !password.value">password is mandatory</span>
+        <span *ngIf="error">Email Id or password is incorrect</span>
+        <button mat-raised-button color="accent"(click)="authenticate()">Login</button>   <button mat-raised-button color="warn" type="reset">Cancel</button>
+        <br/>
+    <span>New User?</span>  <button mat-raised-button color="primary" (click)="navigateToRegister()">Register</button> Here
+    </form>
+    </mat-card-content> 
+    </mat-card>
+    </div>
+</div>
+</div>
+</div>
+</pre>
+
+
+
+
+    <!--<form name="reg" #form="ngForm" class="example-form">
+    <label>emailId: </label>
+    <input type="text" name="email" [(ngModel)]="user.email" #mail="ngModel" required>
+    <span *ngIf="mail.touched && !mail.value">
+        EmailId is mandatory
+    </span>-->
+
+    <!-- Email -->
+       <!-- <div class="md-form">
+            <input type="email" id="materialLoginFormEmail" class="form-control" name="email" [(ngModel)]="user.email" #mail="ngModel" required mdbInput>
+            <label for="materialLoginFormEmail">E-mail</label>
+        </div>
+        <span *ngIf="mail.touched && !mail.value">EmailId is mandatory</span>-->
+
+  
+
+    <!--<label>password: </label>
+    <input type="password" name="password" name="pass" [(ngModel)]="user.pass" #password="ngModel" required><br/>
+    <span *ngIf="password.touched && !password.value">
+        password is mandatory
+    </span>-->
+
+     <!-- Password -->
+       <!-- <div class="md-form">
+            <input type="password" id="materialLoginFormPassword" class="form-control"  name="pass" [(ngModel)]="user.pass" #password="ngModel" required mdbInput>
+            <label for="materialLoginFormPassword">Password</label>
+        </div>
+        <span *ngIf="password.touched && !password.value">password is mandatory</span>-->
+
+  
+
+    <!-- Sign in button -->
+   <!-- <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect (click)="authenticate()" 
+    type="submit">Sign in</button>-->
+
+  
+    <!--<button type="button" (click)="authenticate()" [disabled]="form.invalid" >Login</button>  <button type="reset">cancel</button>-->
+
+ <!-- Register -->
+      
+
+  <!--  <span>New User?</span>  <button mat-fab color="primary" (click)="navigateToRegister()">Register</button> Here-->
+
+
+    
+   <!-- <button (click)="navigateToRegister()">Register</button> Here-->
+
+

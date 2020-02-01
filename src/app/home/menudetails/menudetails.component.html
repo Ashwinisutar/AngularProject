@@ -1,0 +1,26 @@
+<pre>
+    <input type="text" [(ngModel)]="searchItem"  placeholder="Search Items">
+    <button (click)="search(searchItem)">Search</button>
+
+    <div *ngFor="let menuItems of menu" >
+        <span>{{menuItems.name}} price is {{menuItems.price}} type is {{menuItems.type}}</span>
+        <img [src]="menuItems.img"/>
+        <button (click)="addtoCart(menuItems)">AddToCart</button>
+    </div>
+
+    <!-- <div *ngFor="let starter of stasters" >
+        <span>{{starter.name}} price is {{starter.price}} type is {{starter.type}}</span>
+        <img [src]="starter.img"/>
+        <button (click)="addtoCart(starter)">AddToCart</button>
+    </div>
+    <div *ngFor="let main of mainCourse" >
+        <span>{{main.name}} price is {{main.price}} type is {{main.type}}</span>
+        <img [src]="main.img"/>
+        <button>AddToCart</button>
+    </div>
+    <div *ngFor="let beverage of beverages" >
+        <span>{{beverage.name}} price is {{beverage.price}} type is {{beverage.type}}</span>
+        <img [src]="beverage.img"/>
+        <button>AddToCart</button>
+    </div> -->
+</pre>

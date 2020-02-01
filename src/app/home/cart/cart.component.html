@@ -1,0 +1,28 @@
+
+<div class="example-card"  >
+    <mat-card class="card" *ngFor="let item of items">
+        <div>
+        <mat-card-title> {{item.name}}</mat-card-title><br/>
+        <mat-card-content> 
+            <img [src]="item.img"/>
+            <br/>
+            <p>Price: {{item.price}}</p>
+            <p>Type: {{item.type}}</p>
+            <p>QTY: {{item.qty}}</p>
+            
+            <button mat-raised-button color="warn" (click)="remove(item)">Remove From Cart</button>
+            <br/><br/>
+            <button mat-raised-button color="primary" id="max" (click)="increase(item)">+</button>  <button mat-raised-button color="primary" (click)="decrease(item)">-</button>
+            
+        </mat-card-content>
+        </div>
+    </mat-card>
+    
+</div>
+<br/>
+<pre>
+<strong style="align-content: center;">TOTAL</strong> : {{total}}     
+
+<button mat-raised-button color="accent" (click)="pay()">PAYMENT</button>
+</pre>
+

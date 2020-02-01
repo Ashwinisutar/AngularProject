@@ -1,0 +1,51 @@
+<br/>
+<input type="text" id="md-4" name="seacrch" [(ngModel)]="searchText">          <button mat-raised-button color="accent" (click)="search(searchText)">Search</button>                
+<!-- <h1>STARTERS :</h1> -->
+<div class="example-card"  >
+    <mat-card class="card" *ngFor="let product of menu">
+        <div>
+        <mat-card-title> {{product.name}}</mat-card-title><br/>
+        <mat-card-content> 
+            <img [src]="product.img"/>
+            <br/>
+            <br/>
+            <p>Price: {{product.price}}</p>
+            <p>Type: {{product.type}}</p>
+           
+        
+            <button mat-raised-button color="accent" id="md-1" (click)="addToCart(product)">Add to Cart</button>   <button mat-raised-button color="warn">Remove</button> 
+        
+         </mat-card-content>
+        </div>
+    </mat-card>
+</div>
+<!-- <h1>MAIN COURSE :</h1>
+<div class="example-card"  >
+    <mat-card class="card" *ngFor="let main of mainCourse">
+        <div>
+        <mat-card-title> {{main.name}}</mat-card-title><br/>
+        <mat-card-content> 
+            <img [src]="main.img"/>
+            <br/>
+          <p>Price: {{main.price}}</p>
+            <p>Type: {{main.type}}</p>
+            <button mat-raised-button color="accent" id="md-2" (click)="addToCart(main)">Add to Cart</button>   <button mat-raised-button color="warn">Remove</button> 
+         </mat-card-content>
+        </div>
+    </mat-card>
+</div>
+<h1>BEVERAGES :</h1>
+<div class="example-card"  >
+    <mat-card class="card" *ngFor="let bvg of beverages">
+        <div>
+        <mat-card-title> {{bvg.name}}</mat-card-title><br/>
+        <mat-card-content> 
+            <img [src]="bvg.img"/>
+            <br/>
+            <p>Price: {{bvg.price}}</p>
+            <button mat-raised-button color="accent" id="md-3"  (click)="addToCart(bvg)">Add to Cart</button>   <button mat-raised-button color="warn">Remove</button> 
+         </mat-card-content>
+        </div>
+    </mat-card>
+</div> -->
+

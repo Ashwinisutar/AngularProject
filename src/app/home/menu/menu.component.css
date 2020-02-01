@@ -1,0 +1,27 @@
+.example-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width:25%;
+    height:20%;
+    background-color: darkturquoise;
+    margin:20px;
+    display: inline-block;
+    text-align: center;
+}
+#md-1{
+    margin-right: 20px;
+}
+#md-2{
+    margin-right: 20px;
+}
+#md-3{
+    margin-right: 20px;
+}
+#md-4{
+    margin-left: 1100px;
+    margin-right: 20px;
+}

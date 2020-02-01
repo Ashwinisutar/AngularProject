@@ -1,0 +1,45 @@
+
+ <div flex=50 class="example-card">
+
+<mat-card class="card"  >
+        <mat-toolbar color="primary" ><span class="title-center" style="color:white;">Registration</span></mat-toolbar>
+        <br/>
+<mat-card-content>
+    <form class="my-form" name="reg" [formGroup]="form" >
+    <mat-form-field class="full-width">
+        <textarea matInput placeholder="First Name" name="fname" formControlName="firstname"></textarea></mat-form-field>
+        <span *ngIf="form.get('firstname').touched && !form.get('firstname').value">First name is mandatory</span>
+        <span *ngIf="form.get('firstname').dirty && form.get('firstname').invalid && form.get('firstname').value">First name should contain minimum 3 chars</span>
+        <br/>
+        <mat-form-field class="full-width">
+        <textarea matInput placeholder="Last Name" name="lname" formControlName="lastname"></textarea></mat-form-field>
+        <span *ngIf="form.get('lastname').touched && !form.get('lastname').value">Lastname is mandatory</span>
+        <br/>
+        <mat-form-field class="full-width">
+        <textarea matInput placeholder="Email" name="mail" formControlName="email"></textarea></mat-form-field>
+        <span *ngIf="form.get('email').touched && !form.get('email').value">Email is mandatory</span>
+        <span *ngIf="form.get('email').dirty && form.get('email').invalid && form.get('email').value">email allowing maximum 30 characters</span>
+        <br/>
+        <mat-form-field class="full-width">
+        <input matInput type="password" placeholder="Password" name="pass" formControlName="password"/></mat-form-field>
+        <span *ngIf="form.get('password').touched && !form.get('password').value">Password is mandatory</span>
+        <span *ngIf="form.get('password').dirty && form.get('password').invalid && form.get('password').value">password should contain minimum 5 chars</span>
+        <br/>
+        <mat-form-field class="full-width">
+        <input matInput type="password" placeholder="Confirm Password" name="cpassword" formControlName="confirmpassword"/></mat-form-field>
+        <span *ngIf="form.get('confirmpassword').touched && !form.get('confirmpassword').value">Confirmpassword is mandatory</span>
+        <br/>
+        <mat-form-field class="full-width">
+        <textarea matInput placeholder="Phone No" name="pno" formControlName="phno"></textarea></mat-form-field>
+        <span *ngIf="form.get('phno').touched && !form.get('phno').value">Phone no is mandatory</span>
+        <span *ngIf="form.get('phno').dirty && form.get('phno').invalid && form.get('phno').value">phno must contain only 10 digits</span>
+        <br/>
+        <mat-card-actions>
+            <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+        </mat-card-actions>
+    </form>
+    </mat-card-content>
+</mat-card>
+</div>
+
+
